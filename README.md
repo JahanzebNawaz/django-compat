@@ -27,7 +27,7 @@ Want to have yours listed here? Send us a PR.
 
 # How to install django-compat
   
-  pip install git+https://github.com/JahanzebNawaz/django-compat.git@master
+    pip install git+https://github.com/JahanzebNawaz/django-compat.git@master
    
 
 # How to use django-compat
