@@ -25,6 +25,11 @@ Want to have yours listed here? Send us a PR.
 * Use features from newer Django versions in an old one
 * Manage and master the gap between different framework versions
 
+# How to install django-compat
+  
+  pip install git+https://github.com/JahanzebNawaz/django-compat.git@master
+   
+
 # How to use django-compat
 
 Install compat from the [PyPI](https://pypi.python.org/pypi/django-compat) or download and install manually. All relevant  releases are listed [here under releases](https://github.com/arteria/django-compat/releases).
