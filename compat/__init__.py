@@ -43,9 +43,14 @@ except ImportError:
     from six.moves._thread import get_ident  # noqa
 
 try:
-    from django.conf.urls import url, include, handler404, handler500
+    from django.conf.urls import include, handler404, handler500
 except ImportError:
-    from django.conf.urls.defaults import url, include, handler404, handler500  # pyflakes:ignore
+    from django.conf.urls.defaults import include, handler404, handler500  # pyflakes:ignore
+
+try:
+    from django.urls import re_path as url
+except ImportError:
+    from django.urls.conf import re_path as url  # pyflakes:ignore
 
 try:
     from django.conf.urls import patterns
@@ -56,17 +61,17 @@ except ImportError:
         pass
 
 
-# Handle django.utils.encoding rename in 1.5 onwards.
-# smart_unicode -> smart_text
-# force_unicode -> force_text
+# Handle django.utils.encoding rename in 4.0 onwards.
+# smart_bytes -> smart_text
+# force_bytes -> force_text
 try:
-    from django.utils.encoding import smart_text
+    from django.utils.encoding import smart_str as smart_text
 except ImportError:
-    from django.utils.encoding import smart_unicode as smart_text
+    from django.utils.encoding import smart_bytes as smart_text
 try:
-    from django.utils.encoding import force_text
+    from django.utils.encoding import force_str as force_text
 except ImportError:
-    from django.utils.encoding import force_unicode as force_text
+    from django.utils.encoding import force_bytes as force_text
 
 
 if django.VERSION >= (1, 6):
